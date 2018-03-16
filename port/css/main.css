@@ -1,0 +1,44 @@
+ .top{
+     position: relative;
+     padding:20em;
+      
+ }
+ .name2  {
+     color:#fff;
+ }
+ .space{
+     color:#fff;
+     font-size:20px;
+ }
+ .my{
+     padding:1em;
+     text-align:center;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size:20px;
+ }
+ .things{
+    text-align:center;
+    padding:3em;
+ }
+ .about{
+     text-align:center;
+      
+ }
+ .mail{
+     background-color:#2aa383;
+     color:#fff;
+     font-family: Arial, Helvetica, sans-serif;
+     text-align: center;
+     position: relative;
+     top:3em;
+     padding:2em;
+     
+ }
+  .end{
+      padding:4em;
+      font-size:12px;
+  }
+  h6{
+    font-size:12px; 
+     
+  }

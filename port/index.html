@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Portforlio | Simon</title>
+    <!---My CSS---->
+    <link rel="stylesheet" href="css/main.css">
+    <!---Bootstrap 3/4 cdn---->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="img/mac.jpg" sizes="18x18" type="img/jpg">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        
+         var TxtType = function(el, toRotate, period) {
+                this.toRotate = toRotate;
+                this.el = el;
+                this.loopNum = 0;
+                this.period = parseInt(period, 10) || 2000;
+                this.txt = '';
+                this.tick();
+                this.isDeleting = false;
+            };
+
+            TxtType.prototype.tick = function() {
+                var i = this.loopNum % this.toRotate.length;
+                var fullTxt = this.toRotate[i];
+
+                if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 6);
+                } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+
+                this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+                var that = this;
+                var delta = 200 - Math.random() * 100;
+
+                if (this.isDeleting) { delta /= 2; }
+
+                if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+                } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+                }
+
+                setTimeout(function() {
+                that.tick();
+                }, delta);
+            };
+
+            window.onload = function() {
+                var elements = document.getElementsByClassName('typewrite');
+                for (var i=0; i<elements.length; i++) {
+                    var toRotate = elements[i].getAttribute('data-type');
+                    var period = elements[i].getAttribute('data-period');
+                    if (toRotate) {
+                      new TxtType(elements[i], JSON.parse(toRotate), period);
+                    }
+                }
+
+            };   
+      </script>
+ 
+</head>
+<body>
+  <section id="header">
+      <nav class="navbar navbar-inverse navbar-fixed-top ">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand  " href="index.html">E N E M A L I
+              </a>
+            </div>
+            <div id="navbar3" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li class=><a href="index.html">Home</a></li>
+                <li><a href="#bio">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                
+              </ul>
+            </div>
+            <!--/.nav-collapse -->
+          </div>
+         <!--/.container-fluid -->
+        </nav>
+  </section>
+              	<!--start background division -->
+    <section id="top">
+            <div class=" container-fluid img-fluid text-center top" style="background-image:url('img/web.jpg');background-repeat:no-repeat;background-size:cover;height:600px">
+    
+                <h1 class="name2">Hi, I'm <span class="name">Enemali Simon Ojonugwa<span><br>
+                    <a href="" class="typewrite name2" data-period="2000" data-type='["I am a Full Stack we developer","I build User Interfaces.", "I build landing pages.", "bootstrap is my playground", "JavaScript is my secret genie ."]'>
+                        <span class="wrap"></span></a>
+                    </h1><br>
+                   <a href="#contact" type="button" class="btn btn-danger">I'm available for hire</a>
+                   <p class="space"><em>I have a varied array of skills that come together to create value</em></p>
+            </div> 
+                 
+  </section>
+             
+  <section id="Expertise">
+    <div class="container my">
+      <h2>My Expertise</h2>
+      <p>I have got chops in every phases of web design processes</p>
+    </div>
+    
+  </section>
+
+  <section id="Things">
+    <div class="container things">
+        <div class="row">
+            <div class="col-md-4">
+                <i style="color:#DC143C;font-size:50px;" class="fa fa-diamond"></i>
+                <h2>Ideation</h2>
+                <p>I collaborate with clients and peers to nurture and transform ideas into well thought out design specs. After all, that's where the majority of amazing user experiences start.</p>
+            
+            </div>
+            <div class="col-md-4">
+                <i style="font-size:50px;color:#DC143C;" class="fa fa-code"></i>
+                <h2>Code</h2>
+                <p>I design in the browser with HTML(5), CSS(3) and a touch of JavaScript. I love coding things from scratch, but I can work with front-end frameworks like Bootstrap too.</p>
+    
+              </div>
+              <div class="col-md-4">
+                  <i style="font-size:50px;color:#DC143C;" class="fa fa-magic"></i>
+                  <h2>UX/UI</h2>
+                  <p>I sketch and wireframe interfaces focusing on content structure, intuitive UI patterns and simple interactions. I'm a minimalist who truly believes that less is more.</p>
+      
+                </div>
+          </div>
+    </div>
+  </section>
+
+  <section id="bio">
+    <div class="container about" >
+       <h2>ABOUT ME</h2>
+    <p>In the spring of 2011, during my first year at college at FPB. I took a general education business<br> where we were assigned the task of building a webpage in Joomla. Thus i began my love affair wth design.After graduating, I began working<br> full time at Start Innovation Hub at Uyo where i began to develop responsive wepages,design interfaces and manage databases for companies.</p>
+        
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container-fluid mail">
+      <h2>Want to Work Together?</h2>
+      <p>I'm currently free and ready to accept new projects of any kind and be delivered at the appropraite time of demand. </p>
+      <!-- Button trigger modal -->
+      <center><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
+         Get intouch
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Leave a</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+               
+        <div class="row">
+         
+            <div class="col-md-12">
+              <div class="row">
+               <div class="col-sm-6 form-group">
+                  <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                </div>
+                <div class="col-sm-6 form-group">
+                  <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                </div>
+              </div>
+              <textarea class="form-control" id="comments" name="comments" placeholder="Your comment" rows="5"></textarea>
+              <br>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                    <center><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+    
+          </div>
+              </div>
+               
+          </div>
+        </div>
+    </div>
+  </section>
+
+    
+<footer id="social-media">
+    <div class="container-fluid footer" style="background-color: #252a30;color: #fff;padding:3em; ">
+        <div class="row text-center">
+            <div class="row">
+                    <div class="col-md-12 end">
+                         
+                      <a href="#"><h6 class="name" style=color:#ffff;>Handmade by me © 2018.</h6></a>
+                     
+                       
+                          <a href="http://www.twitter.com/cymonking" target="_blank"><i class="fa fa-twitter fa-1x"></i></a>
+                          <a href="http://www.facebook.com/Kings Cymon" target="_blank"><i  class="fa fa-facebook fa-1x"></i></a>
+                          <a href="http://www.instagram.com/SymonBerry" target="_blank"><i class="fa fa-instagram fa-1x"></i></a>
+                          <a href="http://github.com/Enemali01" target="_blank"><i class="fa fa-github fa-1x"></i></a>
+                          <a href="https://plus.google.com/"><i id="social-gp" class="fa fa-google-plus-square fa-1x social"></i></a>
+                            </div>
+            </div>
+            </div>
+           
+</div>
+ 
+</footer>
+ 
+    
+
+    
+
+
+ 
+</body>
+
+</html>
